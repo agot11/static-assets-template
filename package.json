@@ -1,0 +1,22 @@
+{
+    "name": "static-assets-template",
+    "version": "1.0.0",
+    "description": "Template for web pages developing and after pack them in distributed packages",
+    "scripts": {
+        "index-dev-sc": "parcel src/index.html --open",
+        "uikit-dev-sc": "parcel src/uikit.html --open",
+        "index-build-sc": "rm -rf build/uikit && parcel build src/index.html --out-dir dist/wwwroot",
+        "uikit-build-sc": "rm -rf build/uikit && parcel build src/uikit.html --out-dir dist/uikit"
+    },
+    "author": "agot11",
+    "license": "ISC",
+    "dependencies": {
+        "autoprefixer": "*",
+        "parcel-bundler": "*",
+        "postcss-modules": "*",
+        "sass": "*"
+    },
+    "browserslist": [
+        "defaults"
+    ]
+}
