@@ -3,18 +3,22 @@
     "version": "1.0.0",
     "description": "Template for web pages developing and after pack them in distributed packages",
     "scripts": {
+        "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
         "index-dev-sc": "parcel src/index.html --open",
         "uikit-dev-sc": "parcel src/uikit.html --open",
-        "index-build-sc": "rm -rf dist/uikit && parcel build src/index.html --out-dir dist/wwwroot",
-        "uikit-build-sc": "rm -rf dist/uikit && parcel build src/uikit.html --out-dir dist/uikit"
+        "index-build-sc": "rm -rf dist/uikit && parcel build src/index.html --out-dir dist/wwwroot --target browser --no-content-hash",
+        "uikit-build-sc": "rm -rf dist/uikit && parcel build src/uikit.html --out-dir dist/uikit --target browser"
     },
     "author": "agot11",
     "license": "ISC",
     "dependencies": {
-        "autoprefixer": "*",
-        "parcel-bundler": "*",
-        "postcss-modules": "*",
-        "sass": "*"
+        "autoprefixer": "^10.0.1",
+        "parcel-bundler": "^1.12.4",
+        "postcss-modules": "^3.2.2",
+        "sass": "^1.26.11"
+    },
+    "resolutions": {
+        "node-forge": "^0.10.0"
     },
     "browserslist": [
         "defaults"
